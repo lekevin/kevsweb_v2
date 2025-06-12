@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en" className="scroll-smooth">
+  <head>
+    <script src="https://cdn.tailwindcss.com?plugins=typography,aspect-ratio,line-clamp"></script>
+
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            keyframes: {
+              rollIn: {
+                "0%": { transform: "rotateY(-89.99deg)", opacity: "0" },
+                "100%": { transform: "rotateY(0deg)", opacity: "0.8" },
+              },
+              rollOut: {
+                "0%": { transform: "rotateY(0deg)", opacity: "0.8" },
+                "100%": { transform: "rotateY(89.99deg)", opacity: "0" },
+              },
+            },
+            animation: {
+              rollIn: "rollIn 0.5s ease-out forwards",
+              rollOut: "rollOut 0.4s ease-in forwards",
+            },
+            colors: {
+              customBlack: '#020C0B'
+            },
+          },
+        },
+      };
+    </script>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Kev's Web</title>
+  </head>
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/src/main.tsx"></script>
+  </body>
+</html>
