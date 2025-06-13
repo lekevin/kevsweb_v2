@@ -35,7 +35,9 @@ async function refreshAccessToken() {
       headers: {
         Authorization:
           "Basic " +
-          Buffer.from(`${process.env.SPOTIFY_CLIENT_ID}:${process.env.SPOTIFY_CLIENT_SECRET}`).toString("base64"),
+          Buffer.from(
+            `${process.env.SPOTIFY_CLIENT_ID}:${process.env.SPOTIFY_CLIENT_SECRET}`
+          ).toString("base64"),
         "Content-Type": "application/x-www-form-urlencoded",
       },
     }
@@ -47,9 +49,12 @@ async function refreshAccessToken() {
 app.get("/now-playing", async (req, res) => {
   try {
     const accessToken = await refreshAccessToken();
-    const { data, status } = await axios.get("https://api.spotify.com/v1/me/player/currently-playing", {
-      headers: { Authorization: `Bearer ${accessToken}` },
-    });
+    const { data, status } = await axios.get(
+      "https://api.spotify.com/v1/me/player/currently-playing",
+      {
+        headers: { Authorization: `Bearer ${accessToken}` },
+      }
+    );
 
     if (status === 204 || data === "") {
       return res.json({ is_playing: false });
