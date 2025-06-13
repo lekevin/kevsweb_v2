@@ -1,3 +1,5 @@
+import NowPlaying from "../components/Spotify";
+
 const About = () => {
   return (
     <div
@@ -63,6 +65,7 @@ const About = () => {
         <div className="text-3xl font-medium pt-5">
           Currently<span className="text-white font-semibold">.</span>
         </div>
+        <NowPlaying />
       </div>
     </div>
   );
