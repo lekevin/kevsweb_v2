@@ -60,7 +60,13 @@ app.get("/now-playing", async (req, res) => {
       return res.json({ is_playing: false });
     }
 
-    res.json(data);
+    res.json({
+      is_playing: data.is_playing,
+      title: data.item.name,
+      artist: data.item.artists.map((a) => a.name).join(", "),
+      album_art: data.item.album.images[0].url,
+      spotify_url: data.item.external_urls.spotify,
+    });
   } catch (err) {
     console.error("Spotify API error:", err.message);
     res.status(500).json({ error: "Failed to get current track" });
