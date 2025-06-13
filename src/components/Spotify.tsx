@@ -24,60 +24,89 @@ export default function NowPlaying() {
   }, []);
 
   if (!track) {
-    return <p className="text-white">Loading...</p>; // case: still fetching
+    return (
+      <div className="w-full max-w-screen-md mx-auto px-4">
+        <p className="text-white">Loading...</p>
+      </div>
+    );
   }
+
+  const Wrapper = ({ children }: { children: React.ReactNode }) => (
+    <div className="w-full max-w-screen-md">
+      <div className="flex flex-col sm:flex-row items-start sm:items-end gap-2">
+        <div className="pr-5 whitespace-nowrap font-semibold pb-2 sm:pb-0">
+          Listening to
+        </div>
+        {children}
+      </div>
+    </div>
+  );
 
   if (track.is_playing) {
     return (
-      <div className="flex items-center gap-4 p-4 bg-zinc-900 rounded-xl shadow-lg text-white max-w-md">
-        <img
-          src={track.album_art}
-          alt="Album cover"
-          className="w-16 h-16 rounded"
-        />
-        <div>
-          <p className="text-sm text-zinc-400">Now Playing:</p>
-          <p className="text-lg font-semibold">{track.title}</p>
-          <p className="text-sm text-zinc-300">{track.artist}</p>
-          <a
-            href={track.spotify_url}
-            target="_blank"
-            className="text-xs underline text-green-400"
-          >
-            Open in Spotify
-          </a>
+      <Wrapper>
+        <div className="relative p-2 bg-zinc-900 rounded-xl shadow-lg w-full sm:max-w-md overflow-hidden">
+          <div className="flex items-center gap-4">
+            <a href={track.spotify_url} target="_blank">
+              <img
+                src={track.album_art}
+                className="w-16 h-16 rounded hover:opacity-40 duration-300"
+              />
+            </a>
+
+            <div className="flex flex-col overflow-hidden w-full">
+              <div className="flex items-center justify-start">
+                <p className="text-sm text-zinc-400 pr-5">Now Playing:</p>
+                <div className="flex items-end gap-[2px] h-4 w-4 shrink-0">
+                  <span className="w-[3px] bg-green-400 animate-eq1 rounded-sm"></span>
+                  <span className="w-[3px] bg-green-400 animate-eq2 rounded-sm"></span>
+                  <span className="w-[3px] bg-green-400 animate-eq3 rounded-sm"></span>
+                </div>
+              </div>
+
+              <p className="text-lg font-semibold text-zinc-300 truncate whitespace-nowrap overflow-hidden max-w-full">
+                {track.title}
+              </p>
+
+              <p className="text-sm text-zinc-600 truncate max-w-full">
+                {track.artist}
+              </p>
+            </div>
+          </div>
         </div>
-      </div>
+      </Wrapper>
     );
   }
-
-  const time = track.played_at;
-  const fromNow = dayjs(time).fromNow();
 
   if (track.last_played) {
+    const fromNow = dayjs(track.played_at).fromNow();
     return (
-      <div className="flex items-center gap-4 p-4 bg-zinc-900 rounded-xl shadow-lg text-white max-w-md">
-        <img
-          src={track.album_art}
-          alt="Album cover"
-          className="w-16 h-16 rounded"
-        />
-        <div>
-          <p className="text-sm text-zinc-400">Last played {fromNow}:</p>
-          <p className="text-lg font-semibold">{track.title}</p>
-          <p className="text-sm text-zinc-300">{track.artist}</p>
+      <Wrapper>
+        <div className="flex p-2 bg-zinc-900 rounded-xl shadow-lg w-full sm:max-w-md overflow-hidden">
           <a
+            className="hover:opacity-40 duration-300"
             href={track.spotify_url}
             target="_blank"
-            className="text-xs underline text-green-400"
           >
-            Open in Spotify
+            <img src={track.album_art} className="w-16 h-16 rounded" />
           </a>
+          <div className="flex flex-col overflow-hidden w-full pl-4">
+            <p className="text-sm text-zinc-400">Last played {fromNow}:</p>
+            <p className="text-lg font-semibold text-zinc-300 truncate whitespace-nowrap overflow-hidden max-w-full">
+              {track.title}
+            </p>
+            <p className="text-sm text-zinc-300 truncate whitespace-nowrap overflow-hidden">
+              {track.artist}
+            </p>
+          </div>
         </div>
-      </div>
+      </Wrapper>
     );
   }
 
-  // Fallback case
-  return <p className="text-white">Not playing anything right now.</p>;
+  return (
+    <div className="w-full max-w-screen-md mx-auto px-4">
+      <p className="text-white">Not playing anything right now.</p>
+    </div>
+  );
 }
