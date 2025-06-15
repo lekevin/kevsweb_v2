@@ -6,7 +6,7 @@ const Experience = () => {
           Experience<span className="text-white font-semibold">.</span>
         </div>
         <div className="font-light text-red-600 text-base whitespace-nowrap">
-          (download cv)
+          (view cv)
         </div>
       </div>
       <div className="space-y-10 mx-auto sm:border-l sm:border-zinc-700 sm:pl-6">
