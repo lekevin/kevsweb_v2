@@ -20,7 +20,7 @@ const Reading = () => {
                   <img
                     src={book.src}
                     alt={book.alt}
-                    className="w-16 sm:w-20 h-full rounded hover:opacity-100 hover:scale-125 duration-300 hover:ring ring-zinc-500"
+                    className="w-16 sm:w-20 h-full rounded hover:opacity-100 hover:scale-110 duration-300"
                   />
                 </a>
               </div>

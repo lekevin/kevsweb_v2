@@ -37,7 +37,9 @@ export default function NowPlaying() {
         <div className="pr-5 whitespace-nowrap font-semibold pb-2 sm:pb-0">
           Listening to
         </div>
-        {children}
+        <a href={track.spotify_url} target="_blank" className="shrink-0 rounded-xl hover:ring ring-zinc-700 hover:scale-105 duration-300">
+          {children}
+        </a>
       </div>
     </div>
   );
@@ -45,14 +47,12 @@ export default function NowPlaying() {
   if (track.is_playing) {
     return (
       <Wrapper>
-        <div className="relative p-2 bg-zinc-900 rounded-xl shadow-lg w-full sm:max-w-md overflow-hidden">
+        <div className="relative p-2 bg-zinc-900 rounded-xl w-full overflow-hidden">
           <div className="flex items-center gap-4">
-            <a href={track.spotify_url} target="_blank">
-              <img
-                src={track.album_art}
-                className="w-16 h-16 rounded hover:opacity-40 duration-300"
-              />
-            </a>
+            <img
+              src={track.album_art}
+              className="w-16 h-16 border-4 rounded-lg border-zinc-800"
+            />
 
             <div className="flex flex-col overflow-hidden w-full">
               <div className="flex items-center justify-start">
