@@ -49,10 +49,16 @@ const Hero = () => {
               className="w-8 h-8 invert brightness-0 hover:opacity-70 hover:scale-95 transition-transform duration-500 cursor-pointer"
             />
           </a>
-          <img
-            src="src/assets/heart.png"
-            className="w-8 h-8 invert brightness-0 hover:opacity-70 hover:scale-95 transition-transform duration-500 hover: cursor-pointer"
-          />
+          <a
+            href="https://medium.com/@aa.xien/the-purpose-of-life-is-to-experience-a224ce6f6a6c"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <img
+              src="src/assets/heart.png"
+              className="w-8 h-8 invert brightness-0 hover:opacity-70 hover:scale-95 transition-transform duration-500 hover: cursor-pointer"
+            />
+          </a>
         </div>
       </div>
       <a

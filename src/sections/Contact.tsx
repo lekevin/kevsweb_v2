@@ -63,7 +63,7 @@ const Contact = () => {
               CONTACT DETAILS
             </h4>
             <a href="mailto:email@lekevin.com">
-              <p className="text-zinc-400 hover:text-red-600">
+              <p className="text-zinc-400 duration-300 hover:text-red-600">
                 email@lekevin.com
               </p>
             </a>
