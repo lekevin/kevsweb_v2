@@ -10,9 +10,9 @@ const works = [
     href: "https://google-keep-react-eight.vercel.app",
   },
   {
-    title: "Inventory App",
+    title: "Inventory App (Demo)",
     img: "src/assets/3.png",
-    href: "#",
+    href: "https://www.youtube.com/watch?v=5imqdSwFElU",
   },
 ];
 

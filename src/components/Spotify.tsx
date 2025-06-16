@@ -51,7 +51,7 @@ export default function NowPlaying() {
   if (track.is_playing) {
     return (
       <Wrapper>
-        <div className="relative p-2 bg-zinc-900 rounded-xl w-full overflow-hidden">
+        <div className="relative p-2 bg-zinc-900 rounded-xl w-full max-w-96 overflow-hidden">
           <div className="flex items-center gap-4">
             <img
               src={track.album_art}

@@ -37,10 +37,12 @@ const Hero = () => {
               className="w-8 h-8 invert brightness-0 hover:opacity-70 hover:scale-95 transition-transform duration-500 cursor-pointer"
             />
           </a>
-          <img
-            src="src/assets/cv.png"
-            className="w-8 h-8 invert brightness-0 hover:opacity-70 hover:scale-95 transition-transform duration-500 cursor-pointer"
-          />
+          <a href="/resume.pdf" target="_blank" rel="noopener noreferrer">
+            <img
+              src="src/assets/cv.png"
+              className="w-8 h-8 invert brightness-0 hover:opacity-70 hover:scale-95 transition-transform duration-500 cursor-pointer"
+            />
+          </a>
           <a href="mailto:email@lekevin.com">
             <img
               src="src/assets/email.png"

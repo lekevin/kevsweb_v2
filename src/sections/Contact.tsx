@@ -63,7 +63,9 @@ const Contact = () => {
               CONTACT DETAILS
             </h4>
             <a href="mailto:email@lekevin.com">
-              <p className="text-zinc-400 hover:text-red-600">email@lekevin.com</p>
+              <p className="text-zinc-400 hover:text-red-600">
+                email@lekevin.com
+              </p>
             </a>
           </div>
           <div>
@@ -75,13 +77,21 @@ const Contact = () => {
             <h4 className="font-bold text-zinc-300 mb-1">LINKS</h4>
             <ul className="space-y-2 text-zinc-400">
               <li>
-                <a href="#">Resume</a>
+                <a
+                  href="/resume.pdf"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="hover:text-red-600 duration-300"
+                >
+                  Resume
+                </a>
               </li>
               <li>
                 <a
                   href="https://www.github.com/lekevin/"
                   target="_blank"
                   rel="noopener noreferrer"
+                  className="hover:text-red-600 duration-300"
                 >
                   GitHub
                 </a>
@@ -92,6 +102,7 @@ const Contact = () => {
                   href="https://www.linkedin.com/in/lekevinn/"
                   target="_blank"
                   rel="noopener noreferrer"
+                  className="hover:text-red-600 duration-300"
                 >
                   LinkedIn
                 </a>
