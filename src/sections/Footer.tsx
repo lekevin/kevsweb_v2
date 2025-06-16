@@ -34,6 +34,15 @@ const Footer = () => {
       >
         Next.js
       </a>,
+      <a
+        key="next"
+        href="https://nextjs.org"
+        target="_blank"
+        rel="noopener noreferrer"
+        className="font-medium text-red-600 hover:opacity-80"
+      >
+        , Express.js,
+      </a>,
       " and ",
       <a
         key="tailwind"
@@ -75,7 +84,9 @@ const Footer = () => {
     <footer className="w-full bg-customBlack text-center text-sm text-zinc-500 px-6 py-10">
       <div className="w-[65vw] mx-auto">
         {items.map((line, idx) => (
-          <p key={idx} className="mb-2 last:mb-0">{line}</p>
+          <p key={idx} className="mb-2 last:mb-0">
+            {line}
+          </p>
         ))}
       </div>
     </footer>
