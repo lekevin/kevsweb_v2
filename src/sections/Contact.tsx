@@ -14,7 +14,10 @@ const Contact = () => {
   return (
     <div className="bg-customBlack text-white flex flex-col items-center justify-start pb-20">
       <h2 className="text-4xl text-zinc-600">
-        <span className="text-red-600">C</span>ontact
+        <span id="contact" className="text-red-600">
+          C
+        </span>
+        ontact
       </h2>
 
       <div className="w-full max-w-[65vw] flex flex-col lg:flex-row lg:justify-between lg:gap-10 p-10">
@@ -56,8 +59,12 @@ const Contact = () => {
 
         <div className="flex flex-col space-y-8 justify-center text-sm">
           <div>
-            <h4 className="font-bold text-zinc-300 mb-1 pt-10">CONTACT DETAILS</h4>
-            <p className="text-zinc-400">email@lekevin.com</p>
+            <h4 className="font-bold text-zinc-300 mb-1 pt-10">
+              CONTACT DETAILS
+            </h4>
+            <a href="mailto:email@lekevin.com">
+              <p className="text-zinc-400 hover:text-red-600">email@lekevin.com</p>
+            </a>
           </div>
           <div>
             <h4 className="font-bold text-zinc-300 mb-1">LOCATION</h4>
@@ -67,9 +74,28 @@ const Contact = () => {
           <div>
             <h4 className="font-bold text-zinc-300 mb-1">LINKS</h4>
             <ul className="space-y-2 text-zinc-400">
-              <li><a href="#">Resume</a></li>
-              <li><a href="#">GitHub</a></li>
-              <li><a href="#">LinkedIn</a></li>
+              <li>
+                <a href="#">Resume</a>
+              </li>
+              <li>
+                <a
+                  href="https://www.github.com/lekevin/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  GitHub
+                </a>
+              </li>
+              <li>
+                {" "}
+                <a
+                  href="https://www.linkedin.com/in/lekevinn/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  LinkedIn
+                </a>
+              </li>
             </ul>
           </div>
         </div>

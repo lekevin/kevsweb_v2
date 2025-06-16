@@ -1,7 +1,3 @@
-import { useState } from "react";
-
-const [liked, setLiked] = useState(false);
-
 const Hero = () => {
   return (
     <section className="min-h-screen flex flex-col items-center justify-center text-white opacity-80 text-center relative pb-30 ">
@@ -21,27 +17,39 @@ const Hero = () => {
         <div className="w-[60vw] max-w-md mx-auto h-px bg-white/50 mb-4" />
 
         <div className="flex justify-center gap-[4vw] sm:gap-[2vw] text-xl">
-          <img
-            src="src/assets/github.png"
-            className="w-8 h-8 invert brightness-0 hover:opacity-70 hover:scale-95 transition-transform duration-500 cursor-pointer"
-          />
-          <img
-            src="src/assets/linkedin.png"
-            className="w-8 h-8 invert brightness-0 hover:opacity-70 hover:scale-95 transition-transform duration-500 cursor-pointer"
-          />
+          <a
+            href="http://github.com/lekevin"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <img
+              src="src/assets/github.png"
+              className="w-8 h-8 invert brightness-0 hover:opacity-70 hover:scale-95 transition-transform duration-500 cursor-pointer"
+            />
+          </a>
+          <a
+            href="https://www.linkedin.com/in/lekevinn/"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <img
+              src="src/assets/linkedin.png"
+              className="w-8 h-8 invert brightness-0 hover:opacity-70 hover:scale-95 transition-transform duration-500 cursor-pointer"
+            />
+          </a>
           <img
             src="src/assets/cv.png"
             className="w-8 h-8 invert brightness-0 hover:opacity-70 hover:scale-95 transition-transform duration-500 cursor-pointer"
           />
-          <img
-            src="src/assets/email.png"
-            className="w-8 h-8 invert brightness-0 hover:opacity-70 hover:scale-95 transition-transform duration-500 cursor-pointer"
-          />
+          <a href="mailto:email@lekevin.com">
+            <img
+              src="src/assets/email.png"
+              className="w-8 h-8 invert brightness-0 hover:opacity-70 hover:scale-95 transition-transform duration-500 cursor-pointer"
+            />
+          </a>
           <img
             src="src/assets/heart.png"
-            alt="Heart"
-            onClick={() => setLiked((prev) => !prev)}
-            className={`w-8 h-8 cursor-pointer transition-transform duration-500 hover:opacity-70 hover:scale-95 invert brightness-0 ${liked ? "filter-red" : "filter-gray"}`}
+            className="w-8 h-8 invert brightness-0 hover:opacity-70 hover:scale-95 transition-transform duration-500 hover: cursor-pointer"
           />
         </div>
       </div>
