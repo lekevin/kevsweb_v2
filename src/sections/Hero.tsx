@@ -1,8 +1,14 @@
+import { useState } from "react";
+
+const [liked, setLiked] = useState(false);
+
 const Hero = () => {
   return (
     <section className="min-h-screen flex flex-col items-center justify-center text-white opacity-80 text-center relative pb-30 ">
       <div className="max-w-3xl sm:max-w-6xl sm:mt-24">
-        <h1 className="text-4xl sm:text-6xl font-bold mb-6">Hello, I’m Kevin</h1>
+        <h1 className="text-4xl sm:text-6xl font-bold mb-6">
+          Hello, I’m Kevin
+        </h1>
 
         <p className="sm:text-2xl leading-relaxed opacity-90 mb-8 px-6">
           Tech enthusiast and perpetual explorer of the spaces where design
@@ -33,11 +39,16 @@ const Hero = () => {
           />
           <img
             src="src/assets/heart.png"
-            className="w-8 h-8 invert brightness-0 hover:opacity-70 hover:scale-95 transition-transform duration-500 cursor-pointer"
+            alt="Heart"
+            onClick={() => setLiked((prev) => !prev)}
+            className={`w-8 h-8 cursor-pointer transition-transform duration-500 hover:opacity-70 hover:scale-95 invert brightness-0 ${liked ? "filter-red" : "filter-gray"}`}
           />
         </div>
       </div>
-      <a href="#about" className="absolute bottom-14 left-1/2 transform -translate-x-1/2 animate-bounce opacity-70 hover:opacity-100">
+      <a
+        href="#about"
+        className="absolute bottom-14 left-1/2 transform -translate-x-1/2 animate-bounce opacity-70 hover:opacity-100"
+      >
         <svg
           xmlns="http://www.w3.org/2000/svg"
           fill="none"

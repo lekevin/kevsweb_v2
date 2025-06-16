@@ -2,6 +2,7 @@ import Header from "../sections/Header";
 import About from "../sections/About";
 import Hero from "../sections/Hero";
 import Works from "../sections/Works";
+import Contact from "../sections/Contact";
 
 const Home = () => {
   return (
@@ -11,6 +12,7 @@ const Home = () => {
         <Hero />
         <About />
         <Works />
+        <Contact />
       </div>
     </div>
   );
