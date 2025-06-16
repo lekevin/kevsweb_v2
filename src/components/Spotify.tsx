@@ -37,7 +37,11 @@ export default function NowPlaying() {
         <div className="pr-5 whitespace-nowrap font-semibold pb-2 sm:pb-0">
           Listening to
         </div>
-        <a href={track.spotify_url} target="_blank" className="shrink-0 rounded-xl hover:ring ring-zinc-700 hover:scale-105 duration-300">
+        <a
+          href={track.spotify_url}
+          target="_blank"
+          className="shrink-0 rounded-xl hover:ring ring-zinc-700 hover:scale-105 duration-300"
+        >
           {children}
         </a>
       </div>
@@ -78,31 +82,43 @@ export default function NowPlaying() {
     );
   }
 
-  if (track.last_played) {
-    const fromNow = dayjs(track.played_at).fromNow();
-    return (
-      <Wrapper>
-        <div className="flex p-2 bg-zinc-900 rounded-xl shadow-lg w-full sm:max-w-md overflow-hidden">
-          <a
-            className="hover:opacity-40 duration-300"
-            href={track.spotify_url}
-            target="_blank"
-          >
-            <img src={track.album_art} className="w-16 h-16 rounded" />
-          </a>
-          <div className="flex flex-col overflow-hidden w-full pl-4">
-            <p className="text-sm text-zinc-400">Last played {fromNow}:</p>
+if (track.last_played) {
+  const fromNow = dayjs(track.played_at).fromNow();
+  return (
+    <Wrapper>
+      <div className="relative p-2 bg-zinc-900 rounded-xl w-full overflow-hidden">
+        <div className="flex items-center gap-4">
+          <img
+            src={track.album_art}
+            className="w-16 h-16 border-4 rounded-lg border-zinc-800"
+          />
+
+          <div className="flex flex-col overflow-hidden w-full">
+            <div className="flex items-center justify-start">
+              <p className="text-sm text-zinc-400 pr-5">
+                Played {fromNow}:
+              </p>
+              <div className="flex items-end gap-[2px] h-4 w-4 shrink-0 opacity-0">
+                <span className="w-[3px] bg-green-400 animate-eq1 rounded-sm"></span>
+                <span className="w-[3px] bg-green-400 animate-eq2 rounded-sm"></span>
+                <span className="w-[3px] bg-green-400 animate-eq3 rounded-sm"></span>
+              </div>
+            </div>
+
             <p className="text-lg font-semibold text-zinc-300 truncate whitespace-nowrap overflow-hidden max-w-full">
               {track.title}
             </p>
-            <p className="text-sm text-zinc-300 truncate whitespace-nowrap overflow-hidden">
+
+            <p className="text-sm text-zinc-600 truncate max-w-full">
               {track.artist}
             </p>
           </div>
         </div>
-      </Wrapper>
-    );
-  }
+      </div>
+    </Wrapper>
+  );
+}
+
 
   return (
     <div className="w-full max-w-screen-md mx-auto px-4">
