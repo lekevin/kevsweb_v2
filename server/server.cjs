@@ -31,6 +31,10 @@ app.listen(PORT, () => {
   console.log(`Server running on port ${PORT}`);
 });
 
+console.log('Starting server...');
+console.log('PORT:', process.env.PORT);
+console.log('NODE_ENV:', process.env.NODE_ENV);
+
 async function refreshAccessToken() {
   const response = await axios.post(
     "https://accounts.spotify.com/api/token",
