@@ -6,6 +6,18 @@
   --font-sans: "Montserrat", sans-serif;
 }
 
+html, body {
+  height: 100%;
+  min-height: -webkit-fill-available;
+}
+
+body {
+  padding-top: env(safe-area-inset-top, 0);
+  padding-bottom: env(safe-area-inset-bottom, 0);
+  padding-left: env(safe-area-inset-left, 0);
+  padding-right: env(safe-area-inset-right, 0);
+}
+
 @keyframes rollIn {
   0% {
     transform: rotateY(-89.99deg);
@@ -74,5 +86,13 @@
   
   .animate-eq3 {
     animation: eq3 1s infinite ease-in-out;
+  }
+
+    .min-h-dvh {
+    min-height: 100dvh;
+  }
+  
+  .h-dvh {
+    height: 100dvh;
   }
 }
