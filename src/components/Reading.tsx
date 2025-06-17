@@ -41,7 +41,7 @@ const Reading = () => {
                   <img
                     src={src}
                     alt={alt}
-                    className="w-16 sm:w-20 h-full rounded hover:opacity-100 hover:scale-110 duration-300"
+                    className="w-16 sm:w-20 h-24 sm:h-28 object-cover rounded hover:opacity-100 hover:scale-110 duration-300"
                   />
                 </a>
               </div>
