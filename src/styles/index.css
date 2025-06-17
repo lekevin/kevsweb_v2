@@ -1,3 +1,78 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400;500;600;700;800;900&display=swap");
 @import "tailwindcss";
-@plugin "tailwindcss-animate";
-@config "../..tailwind.config.js";
+
+@theme {
+  --color-customBlack: #020C0B;
+  --font-sans: "Montserrat", sans-serif;
+}
+
+@keyframes rollIn {
+  0% {
+    transform: rotateY(-89.99deg);
+    opacity: 0;
+  }
+  100% {
+    transform: rotateY(0deg);
+    opacity: 0.8;
+  }
+}
+
+@keyframes rollOut {
+  0% {
+    transform: rotateY(0deg);
+    opacity: 0.8;
+  }
+  100% {
+    transform: rotateY(89.99deg);
+    opacity: 0;
+  }
+}
+
+@keyframes eq1 {
+  0%, 100% {
+    height: 30%;
+  }
+  50% {
+    height: 100%;
+  }
+}
+
+@keyframes eq2 {
+  0%, 100% {
+    height: 70%;
+  }
+  50% {
+    height: 20%;
+  }
+}
+
+@keyframes eq3 {
+  0%, 100% {
+    height: 40%;
+  }
+  50% {
+    height: 90%;
+  }
+}
+
+@layer utilities {
+  .animate-rollIn {
+    animation: rollIn 0.5s ease-out forwards;
+  }
+  
+  .animate-rollOut {
+    animation: rollOut 0.4s ease-in forwards;
+  }
+  
+  .animate-eq1 {
+    animation: eq1 1s infinite ease-in-out;
+  }
+  
+  .animate-eq2 {
+    animation: eq2 1s infinite ease-in-out;
+  }
+  
+  .animate-eq3 {
+    animation: eq3 1s infinite ease-in-out;
+  }
+}

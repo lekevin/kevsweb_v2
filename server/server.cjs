@@ -9,7 +9,7 @@ app.use(cors());
 
 const allowedOrigins = [
   'https://lekevin.com',
-  'https://lekevin-0eb468b5ca39.herokuapp.com/'
+  'https://lekevin-0eb468b5ca39.herokuapp.com'
 ];
 
 app.use(cors({
@@ -22,7 +22,7 @@ app.use(cors({
 
 app.use(express.static(path.join(__dirname, "../dist")));
 
-app.get("/", (req, res) => {
+app.get("*", (req, res) => {
   res.sendFile(path.join(__dirname, "../dist/index.html"));
 });
 
