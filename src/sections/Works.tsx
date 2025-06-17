@@ -1,17 +1,22 @@
+import img1 from "../assets/img1.png";
+import img2 from "../assets/img2.png";
+import img3 from "../assets/img3.png";
+import github from "../assets/github.png";
+
 const works = [
   {
     title: "lekev.in",
-    img: "src/assets/1.png",
+    img: img1,
     href: "https://v1.lekevin.com",
   },
   {
     title: "Google Keep",
-    img: "src/assets/2.png",
+    img: img2,
     href: "https://google-keep-react-eight.vercel.app",
   },
   {
     title: "Inventory App (Demo)",
-    img: "src/assets/3.png",
+    img: img3,
     href: "https://www.youtube.com/watch?v=5imqdSwFElU",
   },
 ];
@@ -59,7 +64,7 @@ const Works = () => {
         className="opacity-70 transition duration-300 pt-20 "
       >
         <img
-          src="src/assets/github.png"
+          src={github}
           className="w-12 h-12 invert brightness-0 hover:opacity-70 hover:scale-95 transition-transform duration-500 cursor-pointer"
         />
       </a>

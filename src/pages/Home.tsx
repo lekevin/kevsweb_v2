@@ -4,11 +4,15 @@ import Hero from "../sections/Hero";
 import Works from "../sections/Works";
 import Contact from "../sections/Contact";
 import Footer from "../sections/Footer";
+import dunes from "../assets/dunes.png";
 
 const Home = () => {
   return (
     <div className="relative justify-center">
-      <div className="relative h-screen bg-[url('src/assets/dunes.png')] font-montserrat bg-cover bg-center">
+      <div
+        className="relative h-screen font-montserrat bg-cover bg-center"
+        style={{ backgroundImage: `url(${dunes})` }}
+      >
         <Header />
         <Hero />
         <About />

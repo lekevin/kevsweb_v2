@@ -1,3 +1,9 @@
+import github from '../assets/github.png';
+import linkedin from '../assets/linkedin.png';
+import cv from '../assets/cv.png';
+import email from '../assets/email.png';
+import heart from '../assets/heart.png';
+
 const Hero = () => {
   return (
     <section id="home" className="min-h-screen flex flex-col items-center justify-center text-white opacity-80 text-center relative pb-30 ">
@@ -23,7 +29,7 @@ const Hero = () => {
             rel="noopener noreferrer"
           >
             <img
-              src="src/assets/github.png"
+              src={github}
               className="w-8 h-8 invert brightness-0 hover:opacity-70 hover:scale-95 transition-transform duration-500 cursor-pointer"
             />
           </a>
@@ -33,19 +39,19 @@ const Hero = () => {
             rel="noopener noreferrer"
           >
             <img
-              src="src/assets/linkedin.png"
+              src={linkedin}
               className="w-8 h-8 invert brightness-0 hover:opacity-70 hover:scale-95 transition-transform duration-500 cursor-pointer"
             />
           </a>
           <a href="/resume.pdf" target="_blank" rel="noopener noreferrer">
             <img
-              src="src/assets/cv.png"
+              src={cv}
               className="w-8 h-8 invert brightness-0 hover:opacity-70 hover:scale-95 transition-transform duration-500 cursor-pointer"
             />
           </a>
           <a href="mailto:email@lekevin.com">
             <img
-              src="src/assets/email.png"
+              src={email}
               className="w-8 h-8 invert brightness-0 hover:opacity-70 hover:scale-95 transition-transform duration-500 cursor-pointer"
             />
           </a>
@@ -55,7 +61,7 @@ const Hero = () => {
             rel="noopener noreferrer"
           >
             <img
-              src="src/assets/heart.png"
+              src={heart}
               className="w-8 h-8 invert brightness-0 hover:opacity-70 hover:scale-95 transition-transform duration-500 hover: cursor-pointer"
             />
           </a>

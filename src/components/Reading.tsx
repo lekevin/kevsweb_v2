@@ -1,17 +1,21 @@
+import tueswmorrie from "../assets/2wmorrie.jpg";
+import meaninglife from "../assets/meaninglife.jpg";
+import shape from "../assets/shape.jpg";
+
 const Reading = () => {
   const books = [
     {
-      src: "src/assets/2wmorrie.jpg",
+      src: tueswmorrie,
       alt: "Tuesdays with Morrie",
       href: "https://morrieandme.com/inspiration/tuesdays-with-morrie/",
     },
     {
-      src: "src/assets/meaninglife.jpg",
+      src: meaninglife,
       alt: "The Meaning of Life",
       href: "https://www.theschooloflife.com/shop/tsol-press-the-meaning-of-life/",
     },
     {
-      src: "src/assets/shape.jpg",
+      src: shape,
       alt: "The Shape of Design",
       href: "https://shapeofdesignbook.com",
     },
