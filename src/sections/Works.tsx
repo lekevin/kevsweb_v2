@@ -23,7 +23,7 @@ const works = [
 
 const Works = () => {
   return (
-    <div id="works" className="min-w-screen bg-customBlack flex flex-col text-zinc-600 tracking-wide font-normal items-center pb-20">
+    <div id="works" className="min-w-screen bg-customBlack flex flex-col text-zinc-600 tracking-wide font-normal items-center pb-20 pt-10">
       <div className="font-base text-4xl mb-10">
         <span className="font-base text-red-600 pt-8">W</span>orks
       </div>

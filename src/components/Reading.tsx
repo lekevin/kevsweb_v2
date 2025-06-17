@@ -29,7 +29,7 @@ const Reading = () => {
             Reading
           </div>
 
-          <div className="flex flex-wrap gap-10">
+          <div className="flex flex-wrap gap-8 sm:gap-10">
             {books.map(({ src, alt, href }, index) => (
               <div key={index} className="relative w-16 sm:w-20 overflow-visible">
                 <a
