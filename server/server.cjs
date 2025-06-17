@@ -5,7 +5,6 @@ const axios = require("axios");
 require("dotenv").config();
 
 const app = express();
-app.use(cors());
 
 const allowedOrigins = [
   'https://lekevin.com',
@@ -21,10 +20,6 @@ app.use(cors({
 }));
 
 app.use(express.static(path.join(__dirname, "../dist")));
-
-app.get("*", (req, res) => {
-  res.sendFile(path.join(__dirname, "../dist/index.html"));
-});
 
 const PORT = process.env.PORT || 3000;
 app.listen(PORT, () => {
@@ -104,4 +99,8 @@ app.get("/now-playing", async (req, res) => {
     console.error("Spotify API error:", err.response?.data || err.message);
     res.status(500).json({ error: "Failed to get current track" });
   }
+});
+
+app.get("*", (req, res) => {
+  res.sendFile(path.join(__dirname, "../dist/index.html"));
 });
