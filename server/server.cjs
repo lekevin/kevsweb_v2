@@ -8,6 +8,7 @@ const app = express();
 
 const allowedOrigins = [
   'https://lekevin.com',
+  'https://www.lekevin.com',
   'https://lekevin-0eb468b5ca39.herokuapp.com'
 ];
 
