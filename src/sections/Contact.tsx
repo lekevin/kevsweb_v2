@@ -20,7 +20,7 @@ const Contact = () => {
         ontact
       </h2>
 
-      <div className="w-full max-w-[65vw] flex flex-col lg:flex-row lg:justify-between lg:gap-10 p-10">
+      <div className="w-full max-w-[80vw] sm:max-w-[65vw] flex flex-col lg:flex-row lg:justify-between lg:gap-10 p-10">
         <form
           className="w-full lg:max-w-[50rem] space-y-6"
           action="https://formspree.io/f/meokkbya"
