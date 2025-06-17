@@ -7,7 +7,18 @@ require("dotenv").config();
 const app = express();
 app.use(cors());
 
-// app.method(path, handler)
+const allowedOrigins = [
+  'https://v2.lekevin.com',
+  'https://randomname.herokuapp.com'
+];
+
+app.use(cors({
+  origin: function (origin, callback) {
+    if (!origin) return callback(null, true);
+    if (allowedOrigins.includes(origin)) return callback(null, true);
+    return callback(new Error('Not allowed by CORS'));
+  }
+}));
 
 app.use(express.static(path.join(__dirname, "../dist")));
 
@@ -55,7 +66,6 @@ app.get("/now-playing", async (req, res) => {
     );
 
     if (response.status === 204 || !response.data || !response.data.item || response.data.is_playing === false) {
-      // fallback to most recently played
       const recent = await axios.get(
         "https://api.spotify.com/v1/me/player/recently-played?limit=1",
         {

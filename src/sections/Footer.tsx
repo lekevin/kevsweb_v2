@@ -22,9 +22,7 @@ const Footer = () => {
         Visual Studio Code
       </a>,
       ", and stitched together with care.",
-    ],
-    [
-      "Crafted with ",
+      " Crafted with ",
       <a
         key="next"
         href="https://nextjs.org"
@@ -64,8 +62,6 @@ const Footer = () => {
         Heroku
       </a>,
       ".",
-    ],
-    [
       "Typeset in ",
       <a
         key="montserrat"
@@ -82,7 +78,7 @@ const Footer = () => {
 
   return (
     <footer className="w-full bg-customBlack text-center text-sm text-zinc-500 px-6 py-10">
-      <div className="w-[65vw] mx-auto">
+      <div className="sm:w-[35vw] mx-auto opacity-60">
         {items.map((line, idx) => (
           <p key={idx} className="mb-2 last:mb-0">
             {line}

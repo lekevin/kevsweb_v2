@@ -21,7 +21,11 @@ const Contact = () => {
       </h2>
 
       <div className="w-full max-w-[65vw] flex flex-col lg:flex-row lg:justify-between lg:gap-10 p-10">
-        <form className="w-full lg:max-w-[50rem] space-y-6">
+        <form
+          className="w-full lg:max-w-[50rem] space-y-6"
+          action="https://formspree.io/f/meokkbya"
+          method="POST"
+        >
           <div>
             <label className="block text-sm font-semibold text-zinc-300 mb-2">
               WHAT’S YOUR NAME?
@@ -37,6 +41,7 @@ const Contact = () => {
             </label>
             <input
               type="email"
+              name="email"
               className="w-full border-b border-zinc-500 bg-transparent py-2 text-white placeholder:text-zinc-400 focus:outline-none"
             />
           </div>
@@ -45,6 +50,7 @@ const Contact = () => {
               YOUR MESSAGE
             </label>
             <textarea
+              name="message"
               rows={4}
               className="w-full border-b border-zinc-500 bg-transparent py-2 text-white resize-none placeholder:text-zinc-400 focus:outline-none"
             />
@@ -108,6 +114,7 @@ const Contact = () => {
                 </a>
               </li>
             </ul>
+            <div className="pt-10 text-zinc-800">powered by <a href="https://formspree.io/" className="hover:text-red-600 duration-300 text-zinc-600">Formspree</a></div>
           </div>
         </div>
       </div>
