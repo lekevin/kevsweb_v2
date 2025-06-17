@@ -15,7 +15,7 @@ export default function NavBar() {
   };
 
   return (
-    <header className="absolute z-50 w-full text-white">
+    <header className="fixed top-0 left-0 z-50 w-full text-white">
       <nav className="hidden sm:flex justify-center gap-8 font-medium text-lg tracking-wider opacity-80 pt-6">
         {["HOME", "ABOUT", "WORKS", "CONTACT"].map((label) => (
           <a
@@ -28,7 +28,7 @@ export default function NavBar() {
         ))}
       </nav>
 
-      <div className="flex sm:hidden justify-end px-5">
+      <div className="sm:hidden absolute top-4 right-5 z-50">
         <button
           onClick={toggleMenu}
           className="flex flex-col items-center justify-center w-12 h-12 rounded-md focus:outline-none opacity-60"
@@ -52,16 +52,15 @@ export default function NavBar() {
 
         {menuMounted && (
           <nav
-            className={`absolute top-full right-0 flex flex-col items-end space-y-2 py-4 px-5 transition-opacity duration-300 ${
+            className={`absolute top-full right-0 flex flex-col items-end px-5 transition-opacity duration-300 ${
               menuOpen ? "opacity-100" : "opacity-0"
             }`}
           >
             {["Home", "About", "Works", "Contact"].map((label, idx) => (
-              <p
+              <a
                 key={label}
-                className={`group relative inline-block uppercase origin-right 
-    will-change-[transform,opacity] 
-    animate-rollIn [animation-delay:${idx * 0.2}s]`}
+                href={`#${label.toLowerCase()}`}
+                className={`group relative inline-block uppercase origin-right py-2 will-change-[transform,opacity] animate-rollIn [animation-delay:${idx * 0.2}s]`}
                 style={{ opacity: 0, transform: "rotateY(-90deg)" }}
               >
                 <span className="text-medium font-medium tracking-wider block relative">
@@ -71,7 +70,7 @@ export default function NavBar() {
                     aria-hidden="true"
                   />
                 </span>
-              </p>
+              </a>
             ))}
           </nav>
         )}

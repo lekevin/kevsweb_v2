@@ -7,18 +7,18 @@ require("dotenv").config();
 const app = express();
 app.use(cors());
 
-// const allowedOrigins = [
-//   'https://v2.lekevin.com',
-//   'https://randomname.herokuapp.com'
-// ];
+const allowedOrigins = [
+  'https://lekevin.com',
+  'https://lekevin-0eb468b5ca39.herokuapp.com/'
+];
 
-// app.use(cors({
-//   origin: function (origin, callback) {
-//     if (!origin) return callback(null, true);
-//     if (allowedOrigins.includes(origin)) return callback(null, true);
-//     return callback(new Error('Not allowed by CORS'));
-//   }
-// }));
+app.use(cors({
+  origin: function (origin, callback) {
+    if (!origin) return callback(null, true);
+    if (allowedOrigins.includes(origin)) return callback(null, true);
+    return callback(new Error('Not allowed by CORS'));
+  }
+}));
 
 app.use(express.static(path.join(__dirname, "../dist")));
 
