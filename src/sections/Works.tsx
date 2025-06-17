@@ -25,7 +25,7 @@ const Works = () => {
   return (
     <div id="works" className="min-w-screen bg-customBlack flex flex-col text-zinc-600 tracking-wide font-normal items-center pb-20">
       <div className="font-base text-4xl mb-10">
-        <span className="font-base text-red-600">W</span>orks
+        <span className="font-base text-red-600 pt-8">W</span>orks
       </div>
       <div className="flex flex-wrap justify-center items-start lg:border-t-[1px]">
         {works.map((work, index) => (
