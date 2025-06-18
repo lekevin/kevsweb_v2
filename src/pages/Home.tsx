@@ -11,7 +11,13 @@ const Home = () => {
     <div className="relative justify-center">
       <div
         className="relative h-screen font-montserrat bg-cover bg-center"
-        style={{ backgroundImage: `url(${dunes})` }}
+        style={{
+          backgroundImage: `url(${dunes})`,
+          paddingTop: "env(safe-area-inset-top)",
+          paddingBottom: "env(safe-area-inset-bottom)",
+          paddingLeft: "env(safe-area-inset-left)",
+          paddingRight: "env(safe-area-inset-right)",
+        }}
       >
         <Header />
         <Hero />
