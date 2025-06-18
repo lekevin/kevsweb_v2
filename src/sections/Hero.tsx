@@ -8,7 +8,7 @@ const Hero = () => {
   return (
     <section id="home" className="min-h-dvh flex flex-col items-center justify-center text-white opacity-80 text-center relative pb-30 ">
       <div className="max-w-3xl sm:max-w-6xl sm:mt-24">
-        <h1 className="text-4xl sm:text-6xl font-bold mb-6">
+        <h1 className="text-4xl sm:text-6xl font-bold mb-6 pt-22 sm:pt-0">
           Hello, I’m Kevin
         </h1>
 
