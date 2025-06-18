@@ -4,7 +4,7 @@ import Hero from "../sections/Hero";
 import Works from "../sections/Works";
 import Contact from "../sections/Contact";
 import Footer from "../sections/Footer";
-import dunes from "../assets/dunes.png";
+import dunes from "../assets/dunes.jpg";
 
 const Home = () => {
   return (
