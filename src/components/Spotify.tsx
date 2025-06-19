@@ -86,7 +86,7 @@ if (track.last_played) {
   const fromNow = dayjs(track.played_at).fromNow();
   return (
     <Wrapper>
-      <div className="relative p-2 bg-zinc-900 rounded-xl w-full overflow-hidden">
+      <div className="relative p-2 bg-zinc-900 rounded-xl w-full max-w-96 overflow-hidden">
         <div className="flex items-center gap-4">
           <img
             src={track.album_art}
@@ -99,9 +99,9 @@ if (track.last_played) {
                 Played {fromNow}:
               </p>
               <div className="flex items-end gap-[2px] h-4 w-4 shrink-0 opacity-0">
-                <span className="w-[3px] bg-green-400 animate-eq1 rounded-sm"></span>
-                <span className="w-[3px] bg-green-400 animate-eq2 rounded-sm"></span>
-                <span className="w-[3px] bg-green-400 animate-eq3 rounded-sm"></span>
+                <span className="w-[3px] bg-green-400 rounded-sm"></span>
+                <span className="w-[3px] bg-green-400 rounded-sm"></span>
+                <span className="w-[3px] bg-green-400 rounded-sm"></span>
               </div>
             </div>
 
