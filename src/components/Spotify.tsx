@@ -9,19 +9,49 @@ export default function NowPlaying() {
     is_playing: boolean;
     title: string;
     artist: string;
-    album_art: string;
+    album_art: string | null;
     spotify_url: string;
     last_played: boolean;
     played_at: string;
   };
 
   const [track, setTrack] = useState<Track | null>(null);
+  const [failed, setFailed] = useState(false);
 
   useEffect(() => {
-    fetch("/now-playing")
-      .then((res) => res.json())
-      .then((data) => setTrack(data));
+    const controller = new AbortController();
+
+    const load = async () => {
+      try {
+        const res = await fetch("/now-playing", { signal: controller.signal });
+        // Without this the error body gets stored as a track, which renders as
+        // "Not playing anything right now" instead of surfacing the failure.
+        if (!res.ok) throw new Error(`/now-playing responded ${res.status}`);
+        setTrack(await res.json());
+        setFailed(false);
+      } catch (err) {
+        if (controller.signal.aborted) return;
+        console.error("Failed to load now-playing:", err);
+        setFailed(true);
+      }
+    };
+
+    load();
+    const interval = setInterval(load, 60_000);
+
+    return () => {
+      controller.abort();
+      clearInterval(interval);
+    };
   }, []);
+
+  if (failed && !track) {
+    return (
+      <div className="w-full max-w-screen-md mx-auto px-4">
+        <p className="text-white">Not playing anything right now.</p>
+      </div>
+    );
+  }
 
   if (!track) {
     return (
@@ -53,10 +83,13 @@ export default function NowPlaying() {
       <Wrapper>
         <div className="relative p-2 bg-zinc-900 rounded-xl w-full max-w-96 overflow-hidden">
           <div className="flex items-center gap-4">
-            <img
-              src={track.album_art}
-              className="w-16 h-16 border-4 rounded-lg border-zinc-800"
-            />
+            {track.album_art && (
+              <img
+                src={track.album_art}
+                alt={`${track.title} album art`}
+                className="w-16 h-16 border-4 rounded-lg border-zinc-800"
+              />
+            )}
 
             <div className="flex flex-col overflow-hidden w-full">
               <div className="flex items-center justify-start">
@@ -88,10 +121,13 @@ if (track.last_played) {
     <Wrapper>
       <div className="relative p-2 bg-zinc-900 rounded-xl w-full max-w-96 overflow-hidden">
         <div className="flex items-center gap-4">
-          <img
-            src={track.album_art}
-            className="w-16 h-16 border-4 rounded-lg border-zinc-800"
-          />
+          {track.album_art && (
+            <img
+              src={track.album_art}
+              alt={`${track.title} album art`}
+              className="w-16 h-16 border-4 rounded-lg border-zinc-800"
+            />
+          )}
 
           <div className="flex flex-col overflow-hidden w-full">
             <div className="flex items-center justify-start">
