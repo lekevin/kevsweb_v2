@@ -33,7 +33,7 @@ const Footer = () => {
         Next.js
       </a>,
       <a
-        key="next"
+        key="express"
         href="https://expressjs.com"
         target="_blank"
         rel="noopener noreferrer"

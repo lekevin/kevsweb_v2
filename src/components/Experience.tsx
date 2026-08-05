@@ -19,7 +19,7 @@ const Experience = () => {
           {
             company: "Veeva Systems",
             href: "https://www.veeva.com",
-            role: "Quality Engineer",
+            role: "Software Quality Engineer",
             date: "May’23 - Present",
             desc: "Automate UI and backend tests across Vault Platform, building reusable frameworks for mobile and web. Integrated LambdaTest into GitLab CI/CD for mobile automation at scale.",
           },

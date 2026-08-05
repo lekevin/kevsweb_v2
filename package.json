@@ -9,6 +9,7 @@
     "lint": "eslint .",
     "preview": "vite preview",
     "start": "node --require dotenv/config server/server.cjs",
+    "spotify:token": "node scripts/get-refresh-token.cjs",
     "heroku-postbuild": "npm run build"
   },
   "dependencies": {

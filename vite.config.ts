@@ -6,5 +6,13 @@ import tailwindcss from '@tailwindcss/vite'
 export default defineConfig({
   plugins: [react(), tailwindcss()],
   build: { outDir: 'dist' },
-  base: "/"
+  base: "/",
+  server: {
+    proxy: {
+      '/now-playing': {
+        target: 'http://localhost:3000',
+        changeOrigin: true,
+      },
+    },
+  },
 })
