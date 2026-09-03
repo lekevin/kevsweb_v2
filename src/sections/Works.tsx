@@ -1,13 +1,13 @@
+import img1 from "../assets/img1.png";
 import img2 from "../assets/img2.png";
-import memefinder from "../assets/memefinder.png";
-import slayssistant from "../assets/slayssistant.png";
+import img3 from "../assets/img3.png";
 import github from "../assets/github.png";
 
 const works = [
   {
     title: "MemeFinder",
-    img: memefinder,
-    href: "https://github.com/lekevin/meme-finder",
+    img: img1,
+    href: "https://memefinder.lekevin.com",
   },
   {
     title: "Google Keep",
@@ -16,8 +16,8 @@ const works = [
   },
   {
     title: "Slayssistant",
-    img: slayssistant,
-    href: "https://github.com/lekevin/slayssistant",
+    img: img3,
+    href: "https://slayssistant.lekevin.com",
   },
 ];
 
