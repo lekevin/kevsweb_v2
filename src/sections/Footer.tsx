@@ -24,14 +24,25 @@ const Footer = () => {
       ", and stitched together with care.",
       " Crafted with ",
       <a
-        key="next"
-        href="https://nextjs.org"
+        key="react"
+        href="https://react.dev"
         target="_blank"
         rel="noopener noreferrer"
         className="font-medium text-red-600 hover:opacity-80"
       >
-        Next.js
+        React
       </a>,
+      ", ",
+      <a
+        key="vite"
+        href="https://vite.dev"
+        target="_blank"
+        rel="noopener noreferrer"
+        className="font-medium text-red-600 hover:opacity-80"
+      >
+        Vite
+      </a>,
+      ", ",
       <a
         key="express"
         href="https://expressjs.com"
@@ -39,9 +50,9 @@ const Footer = () => {
         rel="noopener noreferrer"
         className="font-medium text-red-600 hover:opacity-80"
       >
-        , Express.js,
+        Express
       </a>,
-      " and ",
+      ", and ",
       <a
         key="tailwind"
         href="https://tailwindcss.com"
@@ -61,7 +72,7 @@ const Footer = () => {
       >
         Heroku
       </a>,
-      ".",
+      ". ",
       "Typeset in ",
       <a
         key="montserrat"

@@ -70,6 +70,7 @@ export default function NowPlaying() {
         <a
           href={track.spotify_url}
           target="_blank"
+          rel="noopener noreferrer"
           className="shrink-0 rounded-xl hover:ring ring-zinc-700 hover:scale-105 duration-300"
         >
           {children}

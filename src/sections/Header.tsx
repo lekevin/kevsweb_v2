@@ -60,10 +60,16 @@ export default function NavBar() {
               <a
                 key={label}
                 href={`#${label.toLowerCase()}`}
-                className={`group relative inline-block uppercase origin-right py-2 will-change-[transform,opacity] animate-rollIn [animation-delay:${idx * 0.2}s]`}
-                style={{ opacity: 0, transform: "rotateY(-90deg)" }}
+                className="group relative inline-block uppercase origin-right py-2 will-change-[transform,opacity] animate-rollIn"
+                // Tailwind can't generate a class from an interpolated value —
+                // the stagger has to be a real inline style to apply at all.
+                style={{
+                  opacity: 0,
+                  transform: "rotateY(-90deg)",
+                  animationDelay: `${idx * 0.2}s`,
+                }}
               >
-                <span className="text-medium font-medium tracking-wider block relative">
+                <span className="text-base font-medium tracking-wider block relative">
                   {label}
                   <span
                     className="absolute left-0 bottom-0 h-[2px] w-0 bg-white transition-all duration-300 group-hover:w-full"

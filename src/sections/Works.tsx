@@ -1,13 +1,13 @@
-import img1 from "../assets/img1.png";
 import img2 from "../assets/img2.png";
-import img3 from "../assets/img3.png";
+import memefinder from "../assets/memefinder.png";
+import slayssistant from "../assets/slayssistant.png";
 import github from "../assets/github.png";
 
 const works = [
   {
-    title: "lekev.in",
-    img: img1,
-    href: "https://v1.lekevin.com",
+    title: "MemeFinder",
+    img: memefinder,
+    href: "https://github.com/lekevin/meme-finder",
   },
   {
     title: "Google Keep",
@@ -15,9 +15,9 @@ const works = [
     href: "https://google-keep-react-eight.vercel.app",
   },
   {
-    title: "Inventory App (Demo)",
-    img: img3,
-    href: "https://www.youtube.com/watch?v=5imqdSwFElU",
+    title: "Slayssistant",
+    img: slayssistant,
+    href: "https://github.com/lekevin/slayssistant",
   },
 ];
 

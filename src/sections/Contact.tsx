@@ -27,31 +27,47 @@ const Contact = () => {
           method="POST"
         >
           <div>
-            <label className="block text-sm font-semibold text-zinc-300 mb-2">
+            <label
+              htmlFor="contact-name"
+              className="block text-sm font-semibold text-zinc-300 mb-2"
+            >
               WHAT’S YOUR NAME?
             </label>
             <input
+              id="contact-name"
               type="text"
+              name="name"
+              required
               className="w-full border-b border-zinc-500 bg-transparent py-2 text-white placeholder:text-zinc-400 focus:outline-none"
             />
           </div>
           <div>
-            <label className="block text-sm font-semibold text-zinc-300 mb-2">
+            <label
+              htmlFor="contact-email"
+              className="block text-sm font-semibold text-zinc-300 mb-2"
+            >
               WHAT’S YOUR EMAIL?
             </label>
             <input
+              id="contact-email"
               type="email"
               name="email"
+              required
               className="w-full border-b border-zinc-500 bg-transparent py-2 text-white placeholder:text-zinc-400 focus:outline-none"
             />
           </div>
           <div>
-            <label className="block text-sm font-semibold text-zinc-300 mb-2">
+            <label
+              htmlFor="contact-message"
+              className="block text-sm font-semibold text-zinc-300 mb-2"
+            >
               YOUR MESSAGE
             </label>
             <textarea
+              id="contact-message"
               name="message"
               rows={4}
+              required
               className="w-full border-b border-zinc-500 bg-transparent py-2 text-white resize-none placeholder:text-zinc-400 focus:outline-none"
             />
           </div>

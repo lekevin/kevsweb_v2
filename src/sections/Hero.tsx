@@ -30,6 +30,7 @@ const Hero = () => {
           >
             <img
               src={github}
+              alt="GitHub"
               className="w-8 h-8 invert brightness-0 hover:opacity-70 hover:scale-95 transition-transform duration-500 cursor-pointer"
             />
           </a>
@@ -40,18 +41,21 @@ const Hero = () => {
           >
             <img
               src={linkedin}
+              alt="LinkedIn"
               className="w-8 h-8 invert brightness-0 hover:opacity-70 hover:scale-95 transition-transform duration-500 cursor-pointer"
             />
           </a>
           <a href="/resume.pdf" target="_blank" rel="noopener noreferrer">
             <img
               src={cv}
+              alt="Resume"
               className="w-8 h-8 invert brightness-0 hover:opacity-70 hover:scale-95 transition-transform duration-500 cursor-pointer"
             />
           </a>
           <a href="mailto:email@lekevin.com">
             <img
               src={email}
+              alt="Email"
               className="w-8 h-8 invert brightness-0 hover:opacity-70 hover:scale-95 transition-transform duration-500 cursor-pointer"
             />
           </a>
@@ -62,7 +66,8 @@ const Hero = () => {
           >
             <img
               src={heart}
-              className="w-8 h-8 invert brightness-0 hover:opacity-70 hover:scale-95 transition-transform duration-500 hover: cursor-pointer"
+              alt="An essay I like"
+              className="w-8 h-8 invert brightness-0 hover:opacity-70 hover:scale-95 transition-transform duration-500 cursor-pointer"
             />
           </a>
         </div>
