@@ -19,12 +19,7 @@ const missingEnv = [
   .map(([name]) => name);
 
 const allowedOrigins = [
-  "https://lekevin.com",
-  "https://www.lekevin.com",
-  "https://lekevin-0eb468b5ca39.herokuapp.com",
-  "https://kevsweb-v2-a60fc94777da.herokuapp.com",
-  "http://localhost:5173",
-  "http://localhost:3000",
+  "https://v2.lekevin.com",
 ];
 
 app.use(
